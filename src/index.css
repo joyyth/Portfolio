@@ -1,20 +1,88 @@
-@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=DM+Serif+Text:ital@0;1&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap');
-*{
-  padding: 0;
-  margin: 0;
+:root {
+  --paper: #f8f6ef;
+  --ink: #0d0c0a;
+  --ink-soft: #4a4033;
+  --ink-faint: #867e6f;
+  --rust: #932510;
+  --rust-link: #a8552e;
+  --rust-tint: #ecd9cc;
+  --rule: #ddd5c4;
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  color: var(--ink);
+  background: var(--paper);
+  font-family: "Hanken Grotesk", "Segoe UI", sans-serif;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+*,
+*::before,
+*::after {
   box-sizing: border-box;
 }
-:root{
-  --primary-color: #FFEDEF;
-  --secondary-color: #181532;
-  --color-bg1:  rgba(255, 130, 37, 1);
-  --color-bg2: rgba(0, 16, 82, 0.425);
-  --color1: 255, 131, 67;
-  --color2: 255, 238, 173;
-  --color3: 180, 214, 205;
-  --color4: 200, 50, 50;
-  --color5: 180, 180, 50;
-  --color-interactive: 246, 233, 107;
-  --circle-size: 70%;
-  --blending: hard-light;
+
+html {
+  min-width: 20rem;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+  background: var(--paper);
+}
+
+body {
+  min-width: 20rem;
+  min-height: 100vh;
+  margin: 0;
+  overflow-x: hidden;
+  background: var(--paper);
+}
+
+button,
+input,
+textarea {
+  font: inherit;
+}
+
+a,
+button {
+  -webkit-tap-highlight-color: transparent;
+}
+
+a:focus-visible,
+button:focus-visible {
+  outline: 2px solid var(--rust);
+  outline-offset: 0.25rem;
+  border-radius: 1px;
+}
+
+::selection {
+  color: var(--ink);
+  background: var(--rust-tint);
+}
+
+* {
+  scrollbar-color: var(--rule) var(--paper);
+  scrollbar-width: thin;
+}
+
+*::-webkit-scrollbar {
+  width: 0.6rem;
+}
+
+*::-webkit-scrollbar-track {
+  background: var(--paper);
+}
+
+*::-webkit-scrollbar-thumb {
+  background: var(--rule);
+  border: 0.15rem solid var(--paper);
+  border-radius: 999px;
+}
+
+.capture-mode *,
+.capture-mode *::before,
+.capture-mode *::after {
+  animation: none !important;
+  transition: none !important;
 }

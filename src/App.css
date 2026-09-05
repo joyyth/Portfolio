@@ -1,19 +1,446 @@
-html{
-/*   scroll-snap-type: y mandatory; */
-  scroll-behavior: smooth;
-  height: 100%;
-  margin: 0;
-  padding: 0;
-  overflow-x: hidden;
+.page {
+  width: 56%;
+  margin-inline: auto;
 }
-section{
-  min-height: 100vh;
-  scroll-snap-align: center;
-  margin: 0;
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
   padding: 0;
-  border-bottom:1px solid rgba(0,0,0, 0.12);
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+  border: 0;
 }
-#home{
-  background-color: var(--primary-color);
-  
+
+/* ---- Masthead ---- */
+
+.masthead {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  margin-right: -8.7vw;
+  padding-top: 5.31vw;
+}
+
+.wordmark {
+  font-family: "Playfair Display", Georgia, serif;
+  font-style: italic;
+  font-size: clamp(1.25rem, 2.08vw, 2rem);
+  font-weight: 400;
+  color: var(--ink);
+  text-decoration: none;
+  letter-spacing: 0;
+  transition: color 0.25s var(--ease-out);
+}
+
+.wordmark:hover {
+  color: var(--rust);
+}
+
+.masthead-side {
+  display: flex;
+  align-items: center;
+  gap: 1.67vw;
+}
+
+.clock {
+  margin: 0;
+  font-size: clamp(0.8rem, 1.17vw, 1.125rem);
+  font-weight: 500;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+
+.clock-sep {
+  margin-inline: 0.35em;
+  color: var(--rule);
+}
+
+.socials {
+  display: flex;
+  align-items: center;
+  gap: 2.4vw;
+}
+
+.socials a {
+  display: inline-flex;
+  color: var(--ink);
+}
+
+.socials .icon {
+  display: block;
+  height: clamp(1.25rem, 1.9vw, 1.85rem);
+  background: currentColor;
+  -webkit-mask-position: center;
+  mask-position: center;
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  -webkit-mask-size: contain;
+  mask-size: contain;
+  transition: color 0.25s var(--ease-out);
+}
+
+.icon-github {
+  aspect-ratio: 27 / 30;
+  -webkit-mask-image: url("./assets/icon-github.png");
+  mask-image: url("./assets/icon-github.png");
+}
+
+.icon-linkedin {
+  aspect-ratio: 1 / 1;
+  -webkit-mask-image: url("./assets/icon-linkedin.png");
+  mask-image: url("./assets/icon-linkedin.png");
+}
+
+.socials a:hover {
+  color: var(--rust);
+}
+
+/* ---- Identity ---- */
+
+.identity {
+  margin-top: 8.23vw;
+}
+
+.name {
+  margin: 0;
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: clamp(2.6rem, 4.56vw, 4.4rem);
+  font-weight: 400;
+  line-height: 1.05;
+  letter-spacing: 0;
+  color: var(--ink);
+}
+
+.name-dot {
+  color: var(--rust);
+}
+
+.role {
+  margin: 1.35vw 0 0;
+  font-family: "Playfair Display", Georgia, serif;
+  font-style: italic;
+  font-size: clamp(1.4rem, 2.55vw, 2.4rem);
+  font-weight: 400;
+  letter-spacing: 0;
+  color: var(--ink);
+}
+
+.intro {
+  margin: 2.4vw 0 0;
+  max-width: 49rem;
+  font-size: clamp(1.05rem, 1.82vw, 1.75rem);
+  line-height: 1.66;
+  letter-spacing: -0.03em;
+  color: var(--ink);
+}
+
+/* ---- Ledger ---- */
+
+.ledger {
+  margin-top: 3.75vw;
+}
+
+.section-label {
+  margin: 0;
+  font-size: clamp(0.8rem, 1.24vw, 1.2rem);
+  font-weight: 500;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+}
+
+.ledger-rows {
+  list-style: none;
+  margin: 1.25vw 0 0;
+  padding: 0;
+  border-top: 1px solid var(--rule);
+}
+
+.ledger-row {
+  display: grid;
+  grid-template-columns: 14.5vw 29.8vw 1fr;
+  align-items: baseline;
+  column-gap: 1.8vw;
+  padding: 2.24vw 0 2.14vw;
+  border-bottom: 1px solid var(--rule);
+}
+
+.ledger-cell {
+  min-width: 0;
+  line-height: 1.15;
+}
+
+.ledger-company {
+  font-size: clamp(1rem, 1.82vw, 1.75rem);
+  letter-spacing: -0.03em;
+  color: var(--rust-link);
+}
+
+.ledger-company a {
+  color: inherit;
+  text-decoration-line: underline;
+  text-decoration-color: var(--rust);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.16em;
+}
+
+.ledger-role {
+  font-size: clamp(1rem, 1.82vw, 1.75rem);
+  letter-spacing: -0.04em;
+  color: var(--ink);
+}
+
+.ledger-year {
+  font-size: clamp(1rem, 1.7vw, 1.65rem);
+  color: var(--ink-faint);
+  font-variant-numeric: tabular-nums;
+  text-align: left;
+  padding-left: 5.7vw;
+}
+
+/* ---- Projects ---- */
+
+.projects {
+  margin-top: 5.73vw;
+}
+
+.ledger-summary {
+  font-size: clamp(0.95rem, 1.45vw, 1.4rem);
+  line-height: 1.45;
+  letter-spacing: -0.02em;
+  color: var(--ink);
+}
+
+.ledger-link {
+  color: var(--ink);
+  text-decoration-line: underline;
+  text-decoration-color: var(--rust);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.16em;
+  transition: color 0.25s var(--ease-out);
+}
+
+.ledger-link:hover {
+  color: var(--rust);
+}
+
+/* ---- Contact ---- */
+
+.contact {
+  margin-top: 5.73vw;
+  padding-bottom: 7.3vw;
+}
+
+.contact-body {
+  margin-top: 1.2rem;
+  padding-top: 3.75vw;
+  border-top: 1px solid var(--rule);
+}
+
+.copy-email {
+  position: relative;
+  display: block;
+  margin: 0;
+  padding: 0 0 0.42vw;
+  border: 0;
+  background: none;
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: clamp(2rem, 4.2vw, 4.1rem);
+  line-height: 1.15;
+  letter-spacing: 0;
+  text-align: left;
+  color: var(--ink);
+  cursor: copy;
+}
+
+.copy-email-line {
+  display: block;
+  transition:
+    opacity 0.45s var(--ease-out),
+    transform 0.45s var(--ease-out);
+}
+
+.copy-email-address {
+  text-decoration-line: underline;
+  text-decoration-color: transparent;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.14em;
+  transition:
+    opacity 0.45s var(--ease-out),
+    transform 0.45s var(--ease-out),
+    text-decoration-color 0.25s var(--ease-out);
+}
+
+.copy-email:hover .copy-email-address {
+  text-decoration-color: var(--rust);
+}
+
+.copy-email-confirm {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  transform: translateY(0.3rem);
+  color: var(--rust);
+}
+
+.copy-email.is-copied .copy-email-address {
+  opacity: 0;
+  transform: translateY(-0.3rem);
+}
+
+.copy-email.is-copied .copy-email-confirm {
+  opacity: 1;
+  transform: none;
+}
+
+.contact-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 3.33vw;
+}
+
+.cv-link {
+  font-size: clamp(1rem, 1.82vw, 1.75rem);
+  letter-spacing: -0.03em;
+  color: var(--ink);
+  text-decoration-line: underline;
+  text-decoration-color: var(--rust);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.16em;
+  transition: color 0.25s var(--ease-out);
+}
+
+.cv-link:hover {
+  color: var(--rust);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .copy-email-line,
+  .copy-email-address {
+    transition: none;
+  }
+}
+
+/* ---- Small viewports ---- */
+
+@media (max-width: 860px) {
+  .page {
+    width: auto;
+    margin-inline: 1.4rem;
+  }
+
+  .masthead {
+    flex-wrap: wrap;
+    row-gap: 0.9rem;
+    margin-right: 0;
+    padding-top: 2.2rem;
+  }
+
+  .identity {
+    margin-top: 4rem;
+  }
+
+  .name {
+    font-size: clamp(2.3rem, 11vw, 3.2rem);
+  }
+
+  .intro {
+    max-width: none;
+  }
+
+  .ledger {
+    margin-top: 3rem;
+  }
+
+  .ledger-row {
+    grid-template-columns: 1fr auto;
+    column-gap: 1rem;
+    row-gap: 0.4rem;
+    padding: 1.5rem 0 1.4rem;
+  }
+
+  .ledger-role,
+  .ledger-summary {
+    grid-column: 1 / -1;
+  }
+
+  .ledger-year {
+    padding-left: 0;
+    text-align: right;
+  }
+
+  .projects {
+    margin-top: 4rem;
+  }
+
+  .contact {
+    margin-top: 4rem;
+    padding-bottom: 4.5rem;
+  }
+
+  .contact-body {
+    padding-top: 2.2rem;
+  }
+
+  .copy-email {
+    font-size: clamp(1.9rem, 9vw, 3rem);
+  }
+
+  .contact-row {
+    margin-top: 2.2rem;
+  }
+
+  .socials {
+    gap: 1.6rem;
+  }
+}
+
+/* ---- Entrance ---- */
+
+@media (prefers-reduced-motion: no-preference) {
+  .masthead,
+  .identity > *,
+  .ledger,
+  .contact {
+    animation: rise 0.7s var(--ease-out) both;
+  }
+
+  .role {
+    animation-delay: 0.08s;
+  }
+
+  .intro {
+    animation-delay: 0.16s;
+  }
+
+  .ledger {
+    animation-delay: 0.24s;
+  }
+
+  .ledger.projects {
+    animation-delay: 0.32s;
+  }
+
+  .contact {
+    animation-delay: 0.4s;
+  }
+
+  @keyframes rise {
+    from {
+      opacity: 0.35;
+      transform: translateY(0.5rem);
+    }
+    to {
+      opacity: 1;
+      transform: none;
+    }
+  }
 }
