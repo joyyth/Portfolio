@@ -44,7 +44,6 @@ function App() {
         </a>
         <div className="masthead-side">
           <Clock timeZone={identity.timeZone} location="Dhaka" />
-          <Socials />
         </div>
       </header>
 
