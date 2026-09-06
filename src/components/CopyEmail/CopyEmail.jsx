@@ -1,4 +1,5 @@
 import { useCallback, useEffect, useRef, useState } from "react";
+import emailIcon from "../../assets/email.svg";
 
 export default function CopyEmail({ email }) {
   const [copied, setCopied] = useState(false);
@@ -35,10 +36,11 @@ export default function CopyEmail({ email }) {
       }
     >
       <span className="copy-email-line copy-email-address" aria-hidden="true">
-        {email}
+        <img src={emailIcon} alt="Email Icon" />
+        <span>Send me an email</span>
       </span>
       <span className="copy-email-line copy-email-confirm" aria-hidden="true">
-        Copied&nbsp;✓
+        Email copied&nbsp;✓
       </span>
       <span className="sr-only" role="status">
         {copied ? "Email address copied to clipboard" : ""}

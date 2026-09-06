@@ -2,8 +2,11 @@ import "./App.css";
 import Clock from "./components/Clock/Clock";
 import CopyEmail from "./components/CopyEmail/CopyEmail";
 import { contact, experience, identity, projects } from "./data/portfolio";
+import cvIcon from "./assets/cv.svg";
 
-const GitHubIcon = () => <span className="icon icon-github" aria-hidden="true" />;
+const GitHubIcon = () => (
+  <span className="icon icon-github" aria-hidden="true" />
+);
 
 const LinkedInIcon = () => (
   <span className="icon icon-linkedin" aria-hidden="true" />
@@ -48,7 +51,10 @@ function App() {
       <main id="top">
         <section className="identity" aria-labelledby="name">
           <h1 className="name" id="name">
-            Tanvir Hassan Joy<span className="name-dot" aria-hidden="true">.</span>
+            Tanvir Hassan Joy
+            <span className="name-dot" aria-hidden="true">
+              .
+            </span>
           </h1>
           <p className="role">{identity.role}</p>
           <p className="intro">
@@ -120,6 +126,7 @@ function App() {
                 target="_blank"
                 rel="noreferrer"
               >
+                <img src={cvIcon} alt="" aria-hidden="true" />
                 Read my CV&nbsp;↗
               </a>
               <Socials />

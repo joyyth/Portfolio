@@ -239,8 +239,8 @@
 }
 
 .contact-body {
-  margin-top: 1.2rem;
-  padding-top: 3.75vw;
+  margin-top: 1.25vw;
+  padding-top: 1.25vw;
   border-top: 1px solid var(--rule);
 }
 
@@ -248,13 +248,14 @@
   position: relative;
   display: block;
   margin: 0;
-  padding: 0 0 0.42vw;
+  padding: 0;
   border: 0;
   background: none;
-  font-family: "Playfair Display", Georgia, serif;
-  font-size: clamp(2rem, 4.2vw, 4.1rem);
-  line-height: 1.15;
-  letter-spacing: 0;
+  font-family: inherit;
+  font-size: clamp(0.9375rem, 1.25vw, 1.125rem);
+  font-weight: 400;
+  line-height: 1.4;
+  letter-spacing: -0.02em;
   text-align: left;
   color: var(--ink);
   cursor: copy;
@@ -268,6 +269,9 @@
 }
 
 .copy-email-address {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
   text-decoration-line: underline;
   text-decoration-color: transparent;
   text-decoration-thickness: 1px;
@@ -276,6 +280,14 @@
     opacity 0.45s var(--ease-out),
     transform 0.45s var(--ease-out),
     text-decoration-color 0.25s var(--ease-out);
+}
+
+.copy-email-address img,
+.cv-link img {
+  display: block;
+  width: 1.25rem;
+  height: 1.25rem;
+  flex-shrink: 0;
 }
 
 .copy-email:hover .copy-email-address {
@@ -304,12 +316,15 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-top: 3.33vw;
+  margin-top: 1.25vw;
 }
 
 .cv-link {
-  font-size: clamp(1rem, 1.82vw, 1.75rem);
-  letter-spacing: -0.03em;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  font-size: clamp(0.9375rem, 1.25vw, 1.125rem);
+  letter-spacing: -0.02em;
   color: var(--ink);
   text-decoration-line: underline;
   text-decoration-color: var(--rust);
@@ -387,15 +402,12 @@
   }
 
   .contact-body {
-    padding-top: 2.2rem;
-  }
-
-  .copy-email {
-    font-size: clamp(1.9rem, 9vw, 3rem);
+    margin-top: 1rem;
+    padding-top: 1rem;
   }
 
   .contact-row {
-    margin-top: 2.2rem;
+    margin-top: 1rem;
   }
 
   .socials {
